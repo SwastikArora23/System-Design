@@ -1,0 +1,112 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2639
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\fnil\fcharset0 Menlo-Regular;}
+{\colortbl;\red255\green255\blue255;\red0\green0\blue0;\red66\green179\blue255;\red23\green23\blue23;
+\red202\green202\blue202;\red212\green214\blue154;\red140\green211\blue254;\red70\green137\blue204;\red89\green138\blue67;
+\red183\green111\blue179;\red194\green126\blue101;\red167\green197\blue152;}
+{\*\expandedcolortbl;;\cssrgb\c0\c0\c0;\cssrgb\c30980\c75686\c100000;\cssrgb\c11765\c11765\c11765;
+\cssrgb\c83137\c83137\c83137;\cssrgb\c86275\c86275\c66667;\cssrgb\c61176\c86275\c99608;\cssrgb\c33725\c61176\c83922;\cssrgb\c41569\c60000\c33333;
+\cssrgb\c77255\c52549\c75294;\cssrgb\c80784\c56863\c47059;\cssrgb\c70980\c80784\c65882;}
+{\*\listtable{\list\listtemplateid1\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid1\'01\uc0\u8226 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid1}
+{\list\listtemplateid2\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid101\'01\uc0\u8226 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid2}
+{\list\listtemplateid3\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid201\'01\uc0\u8226 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid3}
+{\list\listtemplateid4\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid301\'01\uc0\u8226 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid4}}
+{\*\listoverridetable{\listoverride\listid1\listoverridecount0\ls1}{\listoverride\listid2\listoverridecount0\ls2}{\listoverride\listid3\listoverridecount0\ls3}{\listoverride\listid4\listoverridecount0\ls4}}
+\paperw11900\paperh16840\margl1440\margr1440\vieww28500\viewh14900\viewkind0
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\qc\partightenfactor0
+
+\f0\fs48 \cf0 System Design Assignment\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\fs24 \cf0 \
+\
+Language Choices: \
+Frontend: React.js, Redux, Bootstrap\
+Backend: Node.js, Express.js, PostgreSQL, SequelizeORM\
+Cloud: AWS ECR/ECS with Fargate, S3 buckets, CloudFront, SNS/SQS, AppConfig\
+Logs: Managed Elk Server\
+\
+\
+\pard\tx360\tx720\pardeftab720\li720\fi-720\sl276\slmult1\sa200\partightenfactor0
+\ls1\ilvl0
+\fs20 \cf2 {\listtext	\uc0\u8226 	}Drag-n-drop interface to build out journeys, but inter-connecting different building blocks like a flow-chart / workflow\
+\pard\tx566\pardeftab720\sl276\slmult1\sa200\partightenfactor0
+
+\fs24 \cf0 	  We\'92ll be using React.js for this, as react is more faster in manipulating DOM, because it uses Virtual DOM, to update what is to be displayed on the screen.\
+\
+\pard\tx360\tx720\pardeftab720\li720\fi-720\sl276\slmult1\sa200\partightenfactor0
+\ls2\ilvl0
+\fs20 \cf2 {\listtext	-	}Journey Builder to support features like\
+\pard\tx566\pardeftab720\sl276\slmult1\sa200\partightenfactor0
+
+\fs24 \cf0 \
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+\cf0 {{\NeXTGraphic Screenshot 2023-05-30 at 9.17.19 PM.png \width16390 \height11340 \appleattachmentpadding0 \appleembedtype0 \appleaqc
+}¬}\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+\cf0 \
+\
+\
+\pard\tx360\tx720\pardeftab720\li720\fi-720\sl276\slmult1\sa200\partightenfactor0
+\ls3\ilvl0
+\fs20 \cf2 {\listtext	\uc0\u8226 	}Ability to scale from 10s of users to millions of users with high efficiency\
+{\listtext	\uc0\u8226 	}Ability to run multiple journeys in parallel with minimal lag\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+
+\fs24 \cf0 \
+We\'92ll be creating Micro-service Architecture for that, using AWS ECR/ECS, with EC2 as load balancers, which would run the API replica\'92s at every instance, individually capable of handling n number of requests.\
+\
+\pard\tx360\tx720\pardeftab720\li720\fi-720\sl276\slmult1\sa200\partightenfactor0
+\ls4\ilvl0
+\fs20 \cf2 {\listtext	-	}Appropriate error handling to both inform the marketer as well as support team to debug issues\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+
+\fs24 \cf0 We\'92ll be using managed Elk service for this, where all the logs can be viewed & presented to the team for debugging.\
+\
+`
+\f1 \cf3 \cb4 \expnd0\expndtw0\kerning0
+app\cf5 .\cf6 use\cf5 ((\cf7 error\cf5 , \cf7 req\cf5 , \cf7 res\cf5 , \cf7 _next\cf5 ) \cf8 =>\cf5  \{\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf5 \
+\cb4     \cf9 // Push the request to the log entry metadata so long as we're outside a production environment.\cf5 \cb1 \
+\cb4     \cf8 const\cf5  \cf3 metadata\cf5  = [\cf7 error\cf5 ];\cb1 \
+\cb4     \cf10 if\cf5  (\cf7 process\cf5 .\cf3 NODE_ENV\cf5  !== \cf3 ENV_PRODUCTION\cf5 ) \{ \cf9 // Do not log requests in prouction.\cf5 \cb1 \
+\cb4         \cf3 metadata\cf5 .\cf6 push\cf5 (\cf7 req\cf5 );\cb1 \
+\cb4     \}\cb1 \
+\
+\cb4     \cf9 // Log error.\cf5 \cb1 \
+\cb4     \cf3 logger\cf5 .\cf6 error\cf5 (\cf11 'The application encountered an unhandled exception and returned a 500 internal server error.'\cf5 ,\cb1 \
+\cb4         ...\cf3 metadata\cf5 );\cb1 \
+\
+\cb4     \cf9 // Return 500 internal server error.\cf5 \cb1 \
+\cb4     \cf8 const\cf5  \cf3 response\cf5  = \{\cb1 \
+\cb4         \cf7 message:\cf5  \cf11 'The service encountered an error.'\cf5 ,\cb1 \
+\cb4     \};\cb1 \
+\cb4     \cf10 if\cf5  (\cf7 process\cf5 .\cf3 NODE_ENV\cf5  !== \cf3 ENV_PRODUCTION\cf5 ) \{ \cf9 // In development mode, include error in response.\cf5 \cb1 \
+\cb4         \cf3 response\cf5 .\cf7 error\cf5  = \cf7 error\cf5 ;\cb1 \
+\cb4     \}\cb1 \
+\cb4     \cf10 return\cf5  \cf7 res\cf5 .\cf6 status\cf5 (\cf12 500\cf5 ).\cf6 send\cf5 (\cf3 response\cf5 );\cb1 \
+\cb4 \});\cb1 `
+\f0 \cf0 \kerning1\expnd0\expndtw0 \
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+\cf0 \
+\
+Optionally, we can also provide functionality to disable the logs.\
+\
+\
+\
+\
+ERD:\
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+\cf0 {{\NeXTGraphic Screenshot 2023-05-31 at 10.41.33 AM.png \width18470 \height11110 \appleattachmentpadding0 \appleembedtype0 \appleaqc
+}¬}\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+\cf0 \
+\
+AWS Architecture:\
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+\cf0 {{\NeXTGraphic Screenshot 2023-05-31 at 10.58.20 AM.png \width10890 \height8390 \appleattachmentpadding0 \appleembedtype0 \appleaqc
+}¬}\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf0 \
+}
